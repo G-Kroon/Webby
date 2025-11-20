@@ -1,0 +1,1 @@
+export default function Element32(){return <div>Element 32</div>}

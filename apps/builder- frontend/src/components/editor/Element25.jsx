@@ -1,0 +1,1 @@
+export default function Element25(){return <div>Element 25</div>}
