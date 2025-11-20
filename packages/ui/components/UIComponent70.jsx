@@ -1,0 +1,1 @@
+export const UIComponent70=()=>null;
