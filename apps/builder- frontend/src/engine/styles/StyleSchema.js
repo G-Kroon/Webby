@@ -202,3 +202,25 @@ export const StyleSchema = {
     }
   }
 };
+
+
+
+import { StyleSchema } from "./StyleSchema.js";
+
+class StyleEngine {
+  apply(nodeId, styleObj) {
+    for (const key in styleObj) {
+      if (!this.isPropertyAllowed(key)) continue;
+      const node = this.canvas.findNode(nodeId);
+      if (!node) return false;
+
+      node.styles[key] = styleObj[key];
+    }
+  }
+
+  isPropertyAllowed(prop) {
+    return Object.values(StyleSchema)
+      .some(category => prop in category.properties);
+  }
+}
+
